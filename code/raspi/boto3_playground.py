@@ -16,17 +16,20 @@ def files(path):
         if os.path.isfile(os.path.join(path, file)):
             yield file
 
-def local_time(button):
-    # in methode auslagern
+def local_time(button, filepath):
+    mod_timestamp = datetime.datetime.fromtimestamp(os.path.getmtime(filepath)).date()
+    return mod_timestamp
+
+def get_file_path(button):
     fpath = os.getcwd() + '/' + button
     for file in files(fpath):
         filepath = fpath + '/' + file
-    mod_timestamp = datetime.datetime.fromtimestamp(os.path.getmtime(filepath)).date()
-    return (mod_timestamp, filepath)
+    return filepath
 
 def download_if_newer(button):
     try:
-        local, filepath = local_time(button)
+        filepath = get_file_path(button)
+        local = local_time(button, filepath)
         remote, key = remote_time(button)
         if remote < local:
             new_filepath = button + '/' + key
