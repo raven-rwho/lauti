@@ -1,6 +1,10 @@
 # lauti
 Instructions and code to build a Rasberry Pi powered speaker for children
+<br>
+<br>
 ![lauti](./pictures/lauti.png)
+<br>
+<br>
 english version [here](english.md)
 
 Ein Akkuvetriebener Hörspielabspieler lässt sich auf viele Arten bauen. Mit einem solchen Gerät können Schlummerhörspiele oder anderes mobil / ohne Kabel genutzt werden und dank der eigenen Programmierung sind der Ausgestaltung wenig Grenzen gesetzt.
